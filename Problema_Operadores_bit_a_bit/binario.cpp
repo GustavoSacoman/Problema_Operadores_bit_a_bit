@@ -35,10 +35,10 @@ int binario_and(unsigned short* valor_teste_1, unsigned short* valor_teste_2) {
 int binario_or(unsigned short* valor_teste_1, unsigned short* valor_teste_2) {
 	return *valor_teste_1 | *valor_teste_2;
 }
-int bits_baixos(unsigned short* valor_teste) {
+int bits_baixos(unsigned short* valor_teste,int i) {
 
-	return *valor_teste & 255;
+	return valor_teste[i] & 255;
 }
-int bits_altos(unsigned short* valor_teste) {
-	return *valor_teste & 65280;
+int bits_altos(unsigned short* valor_teste,int i) {
+	return valor_teste[i] & 65280;
 }

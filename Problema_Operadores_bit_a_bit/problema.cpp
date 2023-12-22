@@ -1,92 +1,89 @@
+
+
 #include <iostream>
 #include <bitset>
 #include "genetico.h"
+
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define WHITE "\033[37m"
 using namespace std;
 
 int main() {
 
-	unsigned short a[10], mascara = 1;
+	int a[10], mascara = 1;
 	
-
-	cout << "Digite 6 numeros iniciais: ";
+	
+	cout << "Digite 6 numeros iniciais (Numeros entre 0 e 65535): ";
 	for (int i = 0; i < 6; i++) {
 		
 		cin >> a[i];
+		if (a[i] > 65535 || a[i] < 0) {
+			cout << "Valor invalido! Digite um valor entre 0 e 65535!" << endl;
+			i--;
+		}
 	}
-
-	bitset<16> bs1(a[0]);
-	cout  << "numero: " << a[0] << " - " << bs1 << endl;
-	bitset<16> bs2(a[1]);
-	cout << "numero: " << a[1] << " - " << bs2 << endl;
-	bitset<16> bs3(a[2]);
-	cout << "numero: " << a[2] << " - " << bs3 << endl;
-	bitset<16> bs4(a[3]);
-	cout << "numero: " << a[3] << " - " << bs4 << endl;
-	bitset<16> bs5(a[4]);
-	cout << "numero: " << a[4] << " - " << bs5 << endl;
-	bitset<16> bs6(a[5]);
-	cout << "numero: " << a[5] << " - " << bs6 << endl;
-	
-	cout << "\n\nResultado da Avaliacao" << endl;
-	cout << "----------------------" << endl;
 
 	//Avaliação dos 6 numeros iniciais
 
+	cout << "\n\nResultado da Avaliacao" << endl;
+	cout << "-----------------------" << endl;
+
 	if (avaliacao(a, 0)) {
-		cout << " - " << "OK" << endl;
+		cout << " - " << GREEN << "OK " << WHITE <<  endl;
 	}
 	else
 	{
-		cout << " - " << "X" << endl;
+		cout << " - " << RED << "X" << WHITE << endl;
 	}
 	if (avaliacao(a, 1)) {
-		cout << " - " << "OK" << endl;
+		cout << " - " << GREEN << "OK " << WHITE << endl;
 	}
 	else
 	{
-		cout << " - " << "X" << endl;
+		cout << " - " << RED << "X" << WHITE << endl;
 	}
 	if (avaliacao(a, 2)) {
-		cout << " - " << "OK" << endl;
+		cout << " - " << GREEN << "OK " << WHITE << endl;
 	}
 	else
 	{
-		cout << " - " << "X" << endl;
+		cout << " - " << RED << "X" << WHITE << endl;
 	}
 	if (avaliacao(a, 3)) {
-		cout << " - " << "OK" << endl;
+		cout << " - " << GREEN << "OK " << WHITE << endl;
 	}
 	else
 	{
-		cout << " - " << "X" << endl;
+		cout << " - " << RED << "X" << WHITE << endl;
 	}
 	if (avaliacao(a, 4)) {
-		cout << " - " << "OK" << endl;
+		cout << " - " << GREEN << "OK " << WHITE << endl;
 	}
 	else
 	{
-		cout << " - " << "X" << endl;
+		cout << " - " << RED << "X" << WHITE << endl;
 	}
 	if (avaliacao(a, 5)) {
-		cout << " - " << "OK" << endl;
+		cout << " - " << GREEN << "OK " << WHITE << endl;
 	}
 	else
 	{
-		cout << " - " << "X" << endl;
+		cout << " - " << RED << "X" << WHITE << endl;
 	}
 
-	cout << "-----------------------------" << endl;
+	cout << "-----------------------" << endl;
 	//Cruzamento de dois valores que são enviados pelo o usuario
 
 	a[6] = cruzamento(a, &mascara);
 
 	//Avaliação do cruzamento
 	if (avaliacao(a, 6)) {
-		cout << " - " << "OK" << endl;
+		cout << " - " << GREEN << "OK " << WHITE << endl;
 	}
 	else
 	{
-		cout << " - " << "X" << endl;
+		cout << " - " << RED << "X" << WHITE << endl;
 	}
 
 	//Aritimetico pega dois valores e verifica se tem bits iguais para criar um novo valor
@@ -96,11 +93,11 @@ int main() {
 	//Avaliação do aritmetico
 
 	if (avaliacao(a, 7)) {
-		cout << " - " << "OK" << endl;
+		cout << " - " << GREEN << "OK " << WHITE << endl;
 	}
 	else
 	{
-		cout << " - " << "X" << endl;
+		cout << " - " << RED << "X" << WHITE << endl;
 	}
 
 	//Vai pegar um valor e ligar um bit pré-definido se ele estiver desligado = 0 ou desligar um bit se ele estiver ligado = 1
@@ -108,11 +105,11 @@ int main() {
 
 	//Avaliação da mutação simples
 	if (avaliacao(a, 8)) {
-		cout << " - " << "OK" << endl;
+		cout << " - " << GREEN << "OK " << WHITE << endl;
 	}
 	else
 	{
-		cout << " - " << "X" << endl;
+		cout << " - " << RED << "X" << WHITE << endl;
 	}
 	
 	//Vai pegar um valor e ligar dois bits que estão pré-definidos se eles estiverem desligado = 0 ou desligar os dois bits se eles estiverem ligado = 1
@@ -121,11 +118,11 @@ int main() {
 
 	//Avaliação da mutação dupla
 	if (avaliacao(a, 9)) {
-		cout << " - " << "OK" << endl;
+		cout << " - " << GREEN << "OK " << WHITE << endl;
 	}
 	else
 	{
-		cout << " - " << "X" << endl;
+		cout << " - " << RED << "X" << WHITE << endl;
 	}
 
 

@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-int cruzamento(unsigned short* aa, unsigned short* mascara);
-int aritmetico(unsigned short* aa, unsigned short* mascara);
-int mutacao_simples(unsigned short* aa, unsigned short* mascara);
-int mutacao_dupla(unsigned short* aa, unsigned short* mascara);
-bool avaliacao(unsigned short* valor_avaliacao,int i);
+int cruzamento(int* aa, int* mascara);
+int aritmetico(int* aa, int* mascara);
+int mutacao_simples(int* aa, int* mascara);
+int mutacao_dupla(int* aa, int* mascara);
+bool avaliacao(int* valor_avaliacao,int i);

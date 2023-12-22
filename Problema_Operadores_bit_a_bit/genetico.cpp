@@ -3,28 +3,28 @@
 using namespace std;
 
 
-int cruzamento(unsigned short *aa, unsigned short* mascara)
+int cruzamento(int *aa, int* mascara)
 {
-	unsigned short nova = bits_altos(aa,0);
-	unsigned short nova2 = bits_baixos(aa,1);
+	int nova = bits_altos(aa,0);
+	int nova2 = bits_baixos(aa,1);
 
 	return binario_or(&nova,&nova2);
 }
 
-int aritmetico(unsigned short* aa, unsigned short* mascara) {
+int aritmetico(int* aa, int* mascara) {
 
 
-	unsigned short valor_teste = aa[2];
-	unsigned short valor_teste2 = aa[3];
+	int valor_teste = aa[2];
+	int valor_teste2 = aa[3];
 
 	return binario_and(&valor_teste, &valor_teste2);
 	
 }
 
-int mutacao_simples(unsigned short* aa, unsigned short* mascara) {
+int mutacao_simples(int* aa, int* mascara) {
 
 	int nova_simples;
-	unsigned short envia_valor = aa[4];
+	int envia_valor = aa[4];
 	if (aa[4] & *mascara << 9) {
 		nova_simples = desliga_bit(&envia_valor, 9);
 	}
@@ -35,10 +35,10 @@ int mutacao_simples(unsigned short* aa, unsigned short* mascara) {
 	return nova_simples;
 }
 
-int mutacao_dupla(unsigned short* aa, unsigned short* mascara) {
+int mutacao_dupla(int* aa, int* mascara) {
 
 	int nova_dupla;
-	unsigned short envia_valor = aa[5];
+	int envia_valor = aa[5];
 	if (aa[5] & *mascara << 4) {
 		envia_valor = desliga_bit(&envia_valor, 3);
 	}
@@ -55,7 +55,7 @@ int mutacao_dupla(unsigned short* aa, unsigned short* mascara) {
 
 	return nova_dupla;
 }
-bool avaliacao(unsigned short* valor_avaliacao,int i) {
+bool avaliacao(int* valor_avaliacao,int i) {
 
 	int peso = 0, valor =0, mascara =1;
 	
@@ -124,9 +124,20 @@ bool avaliacao(unsigned short* valor_avaliacao,int i) {
 		peso += 1;
 		valor += 12;
 	}
-
 	
-	std::cout << valor_avaliacao[i] << " - " << valor << " - " << peso;
+	if (valor_avaliacao[i] < 1000) {
+
+		std::cout << "  " << valor_avaliacao[i] << " - " << "$" << valor << " - " << peso << "Kg";
+	}
+	else if (valor_avaliacao[i] < 10000)
+	{
+		std::cout << " " << valor_avaliacao[i] << " - " << "$" << valor << " - " << peso << "Kg";
+	}
+	else
+	{
+		std::cout << valor_avaliacao[i] << " - " << "$" << valor << " - " << peso << "Kg";
+	}
+	
 	
 	if (peso > 20) {
 		return false;

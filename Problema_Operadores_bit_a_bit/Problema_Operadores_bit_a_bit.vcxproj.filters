@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Aula_youtube\Aula_youtube\binario.cpp">
+    <ClCompile Include="binario.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Aula_youtube\Aula_youtube\genetico.cpp">
+    <ClCompile Include="genetico.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Aula_youtube\Aula_youtube\problema.cpp">
+    <ClCompile Include="problema.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Aula_youtube\Aula_youtube\binario.h">
+    <ClInclude Include="binario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Aula_youtube\Aula_youtube\genetico.h">
+    <ClInclude Include="genetico.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

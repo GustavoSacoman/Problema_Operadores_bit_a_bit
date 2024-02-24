@@ -3,29 +3,29 @@
 using namespace std;
 
 
-int cruzamento(int *aa, int* mascara)
+int cruzamento(int valor[], int* mascara)
 {
-	int nova = bits_altos(aa,0);
-	int nova2 = bits_baixos(aa,1);
+	int nova = bits_altos(valor,0);
+	int nova2 = bits_baixos(valor,1);
 
 	return binario_or(&nova,&nova2);
 }
 
-int aritmetico(int* aa, int* mascara) {
+int aritmetico(int valor[], int* mascara) {
 
 
-	int valor_teste = aa[2];
-	int valor_teste2 = aa[3];
+	int valor_teste = valor[2];
+	int valor_teste2 = valor[3];
 
 	return binario_and(&valor_teste, &valor_teste2);
 	
 }
 
-int mutacao_simples(int* aa, int* mascara) {
+int mutacao_simples(int valor[], int* mascara) {
 
 	int nova_simples;
-	int envia_valor = aa[4];
-	if (aa[4] & *mascara << 9) {
+	int envia_valor = valor[4];
+	if (valor[4] & *mascara << 9) {
 		nova_simples = desliga_bit(&envia_valor, 9);
 	}
 	else {
@@ -35,17 +35,17 @@ int mutacao_simples(int* aa, int* mascara) {
 	return nova_simples;
 }
 
-int mutacao_dupla(int* aa, int* mascara) {
+int mutacao_dupla(int valor[], int* mascara) {
 
 	int nova_dupla;
-	int envia_valor = aa[5];
-	if (aa[5] & *mascara << 4) {
+	int envia_valor = valor[5];
+	if (valor[5] & *mascara << 4) {
 		envia_valor = desliga_bit(&envia_valor, 3);
 	}
 	else {
 		envia_valor = ligar_bit(&envia_valor, 3);
 	}
-	if (aa[5] & *mascara << 13) {
+	if (valor[5] & *mascara << 13) {
 		nova_dupla = desliga_bit(&envia_valor, 12);
 	}
 	else {
@@ -55,7 +55,7 @@ int mutacao_dupla(int* aa, int* mascara) {
 
 	return nova_dupla;
 }
-bool avaliacao(int* valor_avaliacao,int i) {
+bool avaliacao(int valor_avaliacao[], int& i) {
 
 	int peso = 0, valor =0, mascara =1;
 	

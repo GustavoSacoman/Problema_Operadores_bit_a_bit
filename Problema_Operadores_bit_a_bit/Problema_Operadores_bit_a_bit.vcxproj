@@ -127,13 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Aula_youtube\Aula_youtube\binario.cpp" />
-    <ClCompile Include="..\..\Aula_youtube\Aula_youtube\genetico.cpp" />
-    <ClCompile Include="..\..\Aula_youtube\Aula_youtube\problema.cpp" />
+    <ClCompile Include="binario.cpp" />
+    <ClCompile Include="genetico.cpp" />
+    <ClCompile Include="problema.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Aula_youtube\Aula_youtube\binario.h" />
-    <ClInclude Include="..\..\Aula_youtube\Aula_youtube\genetico.h" />
+    <ClInclude Include="binario.h" />
+    <ClInclude Include="genetico.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
